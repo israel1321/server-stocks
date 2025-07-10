@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "category": "Clothing",
+    "image":"/images/clothing.jpg"
+  },
+  {
+    "id": 2,
+    "category": "Footwear",
+    "image": "/images/footwear.jpg"
+  },
+  {
+    "id": 3,
+    "category": "Electronics",
+    "image": "/images/Electronics.jpg"
+  },
+  {
+    "id": 4,
+    "category": "Personal Care",
+    "image":  "/images/Personal Care.jpg"
+  },
+  {
+    "id": 5,
+    "category": "Writing Instruments",
+    "image": "/images/Writing Instruments.jpg"
+  },
+  {
+    "id": 6,
+    "category": "Home",
+    "image":  "/images/home.jpg"
+  },
+  {
+    "id": 7,
+    "category": "other",
+    "image": "/images/sports.jpg"
+  }
+   
+]
