@@ -14,9 +14,10 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  numberFhone: {
+  number_phone: {
    type: String,
    required: true,
+   unique: true,
     match: [/^\d{10}$/, 'Phone number must be exactly 10 digits']
     
 

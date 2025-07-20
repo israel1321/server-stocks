@@ -12,7 +12,6 @@ router.use("/", (req, res, next) => {
   next();
 });
 
-
 router.get("/health", (req, res) => {
   res.json({
     message: "OK",

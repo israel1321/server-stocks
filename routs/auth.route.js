@@ -2,15 +2,16 @@ import e, { Router } from "express";
 import UserModel from "../models/user.model.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
+import Logger from "../utils/logger.js";
+import { validateToken } from "../middlewares/tokenValidation.js";
 
 const router = Router();
 
-
 router.post("/login", async (req, res) => {
   try {
-  const { email, password } = req.body;
-  const user = await UserModel.findOne({ email });
- 
+    const { email, password } = req.body;
+    const user = await UserModel.findOne({ email });
+
     if (!user) {
       return res.status(401).json({ message: "Invalid email or password" });
     }
@@ -18,9 +19,11 @@ router.post("/login", async (req, res) => {
     if (!isPasswordCorrect) {
       return res.status(401).json({ message: "Invalid email or password" });
     }
-     const token = jwt.sign({ id: user._id ,role: user.role }, "secret", { expiresIn: "1h" });
+    const token = jwt.sign({ id: user._id, role: user.role }, "secret", {
+      expiresIn: "1h",
+    });
     user.password = "********";
-    res.json({user , token});
+    res.json({ user, token });
   } catch (error) {
     res.status(400).json(error);
   }
@@ -28,15 +31,20 @@ router.post("/login", async (req, res) => {
 
 router.post("/signup", async (req, res) => {
   try {
-    const { name, email, password } = req.body;
+    const { name, email, numberPhone, password } = req.body;
     const passwordHash = await bcrypt.hash(password, 10);
-    const user = new UserModel({ name, email, password: passwordHash });
+    const user = new UserModel({
+      name,
+      email,
+      numberPhone,
+      password: passwordHash,
+    });
     await user.save();
     user.password = "********";
     res.json(user);
   } catch (error) {
     if (error.code === 11000) {
-      return res.status(400).json({ message: "User already exists" });
+      return res.status(409).json({ message: "User already exists" });
     }
     if (error.name === "ValidationError") {
       return res.status(422).json({ message: error.message });
@@ -45,12 +53,9 @@ router.post("/signup", async (req, res) => {
   }
 });
 
-  
-router.post("/validate", async (req, res) => {
+router.get("/validate", validateToken, async (req, res) => {
   try {
-    const { token } = req.body;
-    const decoded = jwt.verify(token, "secret");
-      const user = await UserModel.findById(decoded.id);
+    const user = await UserModel.findById(req.user.id);
 
     if (!user) {
       return res.status(401).json({
@@ -61,6 +66,7 @@ router.post("/validate", async (req, res) => {
     user.password = "********";
     res.json(user);
   } catch (err) {
+    Logger.error(err);
     if (err.name === "TokenExpiredError") {
       return res.status(401).json({
         message: "Token expired",
@@ -68,11 +74,6 @@ router.post("/validate", async (req, res) => {
     }
     res.status(400).json(err);
   }
-  
- 
-
-
-
 });
 
 export default router;

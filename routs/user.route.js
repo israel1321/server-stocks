@@ -29,34 +29,35 @@ router.get("/:id", validateToken, validateAdmin, async (req, res) => {
     res.status(500).json({ success: false, message: error.message });
   }
 });
-router.post("/",async(req,res)=>{
-  try{
+
+router.post("/", async (req, res) => {
+  try {
     const newUser = new UserModel(req.body);
     await newUser.save();
-    res.status(201).json({success:true,data:newUser});
-  }
-  catch(error){
-    res.status(500).json({success:false,message:error.message});
-  }
-});
-router.patch("/:id",validateToken,async(req,res)=>{
-  const id = req.params.id;
-  try{
-    const data = await UserModel.findByIdAndUpdate(id,req.body,{runValidators:true,new:true});
-    res.status(200).json({success:true,data});
-  }
-  catch(error){
-    res.status(500).json({success:false,message:error.message});
+    res.status(201).json({ success: true, data: newUser });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
   }
 });
- router.delete("/:id",validateToken,async(req,res)=>{
+router.patch("/:id", validateToken, async (req, res) => {
   const id = req.params.id;
-  try{
+  try {
+    const data = await UserModel.findByIdAndUpdate(id, req.body, {
+      runValidators: true,
+      new: true,
+    });
+    res.status(200).json({ success: true, data });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+});
+router.delete("/:id", validateToken, async (req, res) => {
+  const id = req.params.id;
+  try {
     await UserModel.findByIdAndDelete(id);
-    res.status(200).json({success:true});
-  }
-  catch(error){
-    res.status(500).json({success:false,message:error.message});
+    res.status(200).json({ success: true });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
   }
 });
 export default router;

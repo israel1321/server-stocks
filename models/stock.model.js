@@ -20,6 +20,14 @@ const StockSchema = new mongoose.Schema({
   description: {
     type: String,
   },
+  location: {
+    type: String,
+  },
+  user_id: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "users",
+    required: true,
+  },
 });
 const StockModel = mongoose.model("stocks", StockSchema);
 export default StockModel;

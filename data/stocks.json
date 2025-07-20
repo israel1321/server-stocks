@@ -1,5 +1,6 @@
 [
   {
+    "user_id": "6877b7c8080c0a466e0c09aa",
     "product_name": "House Slippers",
     "category_code": "footwear",
     "price": 39.9,
@@ -8,6 +9,7 @@
     "description": "Comfortable slippers designed for indoor use."
   },
   {
+    "user_id": "6877b7c8080c0a466e0c09aa",
     "product_name": "Basic T-Shirts",
     "category_code": "clothing",
     "price": 49.9,
@@ -16,6 +18,7 @@
     "description": "Comfortable and versatile basic t-shirts for everyday use."
   },
   {
+    "user_id": "6877b7c8080c0a466e0c09aa",
     "product_name": "Double Bedding Set",
     "category_code": "home",
     "price": 199.9,
@@ -24,6 +27,7 @@
     "description": "Complete double bedding set including sheets and pillowcases."
   },
   {
+    "user_id": "6877b7c8080c0a466e0c09aa",
     "product_name": "10-inch Tablet",
     "category_code": "electronics",
     "price": 1299.0,
@@ -33,6 +37,7 @@
   },
 
   {
+    "user_id": "6877b7c8080c0a466e0c09aa",
     "product_name": "Polo Shirt",
     "category_code": "clothing",
     "price": 79.9,
@@ -41,6 +46,7 @@
     "description": "Classic polo shirt with a comfortable fit for casual outings."
   },
   {
+    "user_id": "6877b7c8080c0a466e0c09aa",
     "product_name": "Women's Running Shoes",
     "category_code": "footwear",
     "price": 299.9,
@@ -49,6 +55,7 @@
     "description": "Lightweight and supportive running shoes designed for women."
   },
   {
+    "user_id": "6877b7c8080c0a466e0c09aa",
     "product_name": "Men's Leather Shoes",
     "category_code": "footwear",
     "price": 349.9,
@@ -58,6 +65,7 @@
   },
 
   {
+    "user_id": "6877b7c8080c0a466e0c09aa",
     "product_name": "Blue Button-Down Shirts",
     "category_code": "clothing",
     "price": 89.9,
@@ -66,6 +74,7 @@
     "description": "Classic blue button-down shirts, perfect for casual and formal wear."
   },
   {
+    "user_id": "6877b7c8080c0a466e0c09aa",
     "product_name": "Women's Boots",
     "category_code": "footwear",
     "price": 399.9,
@@ -74,6 +83,7 @@
     "description": "Stylish and durable boots for women."
   },
   {
+    "user_id": "6877b7c8080c0a466e0c09aa",
     "product_name": "Shower Slippers",
     "category_code": "footwear",
     "price": 29.9,
@@ -82,6 +92,7 @@
     "description": "Non-slip slippers suitable for use in the shower or bathroom."
   },
   {
+    "user_id": "6877b7c8080c0a466e0c09aa",
     "product_name": "Smartphone Pro Max",
     "category_code": "electronics",
     "price": 3199.0,
@@ -90,6 +101,7 @@
     "description": "High-end smartphone with advanced features and large display."
   },
   {
+    "user_id": "6877b7c8080c0a466e0c09aa",
     "product_name": "Bluetooth Headphones",
     "category_code": "electronics",
     "price": 199.0,
@@ -98,6 +110,7 @@
     "description": "Wireless Bluetooth headphones with high-quality sound."
   },
   {
+    "user_id": "6877b7c8080c0a466e0c09aa",
     "product_name": "Fast USB-C Charger",
     "category_code": "electronics",
     "price": 79.0,
@@ -106,6 +119,7 @@
     "description": "Quick charging USB-C adapter compatible with many devices."
   },
   {
+    "user_id": "6877b7c8080c0a466e0c09aa",
     "product_name": "Summer Dresses",
     "category_code": "clothing",
     "price": 129.9,
@@ -115,6 +129,7 @@
   },
 
   {
+    "user_id": "6877b7c8080c0a466e0c09aa",
     "product_name": "Laptop Backpack",
     "category_code": "electronics",
     "price": 129.9,
@@ -123,6 +138,7 @@
     "description": "Durable backpack designed to protect and carry your laptop."
   },
   {
+    "user_id": "6877b7c8080c0a466e0c09aa",
     "product_name": "Natural Shampoo 500ml",
     "category_code": "personal_care",
     "price": 29.9,
@@ -131,6 +147,7 @@
     "description": "Gentle natural shampoo suitable for daily hair care."
   },
   {
+    "user_id": "6877b7c8080c0a466e0c09aa",
     "product_name": "Natural Face Soap",
     "category_code": "personal_care",
     "price": 24.9,
@@ -139,6 +156,7 @@
     "description": "Mild natural soap for cleansing the face."
   },
   {
+    "user_id": "6877b7c8080c0a466e0c09aa",
     "product_name": "Day Moisturizing Cream",
     "category_code": "personal_care",
     "price": 59.9,
@@ -147,6 +165,7 @@
     "description": "Hydrating day cream to nourish and protect skin."
   },
   {
+    "user_id": "6877b7c8080c0a466e0c09aa",
     "product_name": "Anti-Aging Serum",
     "category_code": "personal_care",
     "price": 139.9,
@@ -155,6 +174,7 @@
     "description": "Serum formulated to reduce signs of aging."
   },
   {
+    "user_id": "6877b7c8080c0a466e0c09aa",
     "product_name": "Electric Shaver",
     "category_code": "personal_care",
     "price": 229.0,
@@ -163,6 +183,7 @@
     "description": "Efficient electric shaver for smooth grooming."
   },
   {
+    "user_id": "6877b7c8080c0a466e0c09aa",
     "product_name": "Natural Toothpaste",
     "category_code": "personal_care",
     "price": 19.9,
@@ -171,6 +192,7 @@
     "description": "Toothpaste made with natural ingredients for oral care."
   },
   {
+    "user_id": "6877b7c8080c0a466e0c09aa",
     "product_name": "Lined Notebook",
     "category_code": "writing_instruments",
     "price": 6.9,
@@ -179,6 +201,7 @@
     "description": "Notebook with lined pages for writing and note-taking."
   },
   {
+    "user_id": "6877b7c8080c0a466e0c09aa",
     "product_name": "Gel Pens (Set of 10)",
     "category_code": "writing_instruments",
     "price": 19.9,
@@ -187,6 +210,7 @@
     "description": "Set of 10 gel pens in assorted colors."
   },
   {
+    "user_id": "6877b7c8080c0a466e0c09aa",
     "product_name": "Color Marker Set",
     "category_code": "writing_instruments",
     "price": 29.9,
@@ -195,6 +219,7 @@
     "description": "Bright colored markers ideal for drawing and highlighting."
   },
   {
+    "user_id": "6877b7c8080c0a466e0c09aa",
     "product_name": "Glue Stick",
     "category_code": "writing_instruments",
     "price": 4.9,
@@ -203,6 +228,7 @@
     "description": "Portable glue stick for paper crafting and office use."
   },
   {
+    "user_id": "6877b7c8080c0a466e0c09aa",
     "product_name": "A4 Plastic Binder",
     "category_code": "writing_instruments",
     "price": 12.9,
@@ -211,6 +237,7 @@
     "description": "A4 size plastic binder to organize your documents."
   },
   {
+    "user_id": "6877b7c8080c0a466e0c09aa",
     "product_name": "Desk Lamp",
     "category_code": "home",
     "price": 99.9,
@@ -219,6 +246,7 @@
     "description": "Adjustable desk lamp to illuminate your workspace."
   },
   {
+    "user_id": "6877b7c8080c0a466e0c09aa",
     "product_name": "Men's Jeans",
     "category_code": "clothing",
     "price": 149.9,
@@ -228,6 +256,7 @@
   },
 
   {
+    "user_id": "6877b7c8080c0a466e0c09aa",
     "product_name": "Glass Cups (Set of 6)",
     "category_code": "home",
     "price": 49.9,
@@ -236,6 +265,7 @@
     "description": "Set of 6 clear glass cups, perfect for everyday use."
   },
   {
+    "user_id": "6877b7c8080c0a466e0c09aa",
     "product_name": "Shower Curtain",
     "category_code": "home",
     "price": 59.9,
@@ -244,6 +274,7 @@
     "description": "Water-resistant shower curtain with a modern design."
   },
   {
+    "user_id": "6877b7c8080c0a466e0c09aa",
     "product_name": "Orthopedic Sleeping Pillow",
     "category_code": "home",
     "price": 89.9,
