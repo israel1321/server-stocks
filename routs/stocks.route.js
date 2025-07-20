@@ -6,55 +6,62 @@ const router = Router();
 router.get("/", async (req, res) => {
   try {
     const data = await StockModel.find();
-    res.status(200).json({ success: true, data });
+    res.json(data);
   } catch (error) {
     res.status(500).json({ success: false, message: error.message });
   }
 });
 
- 
- router.get("/:id", async (req, res) => {
-  const id = req.params.id;
-  try{
-    const data = await StockModel.findById( id);
-    if(data){
-      res.status(200).json({ success: true, data });
-    }else{
-      res.status(404).json({ success: false, message: "Stock not found" });
-    }
+router.post("/", async (req, res) => {
+  try {
+    const {
+      product_name,
+      category,
+      categoryCode,
+      price,
+      stock,
+      image_url,
+      description,
+    } = req.body;
+    const item = new StockModel({
+      product_name,
+      category,
+      categoryCode,
+      price,
+      stock,
+      image_url,
+      description,
+    });
+    await newStock.save();
+    res.status(201).json(item);
   } catch (error) {
     res.status(500).json({ success: false, message: error.message });
   }
 });
 
-router.post("/", async (req,res) =>{
-  try{
-  const newStock = new StockModel(req.body);
-  await newStock.save();
-  res.status(201).json({ success: true, data: newStock });
-  }catch(error){
+router.patch("/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const update = req.body;
+    const data = await StockModel.findByIdAndUpdate(id, update, {
+      new: true,
+    });
+    if (!data) return res.status(404).json({ error: "Product not found" });
+    res.json(data);
+  } catch (error) {
     res.status(500).json({ success: false, message: error.message });
   }
 });
 
- router.patch("/:id",async(req,res) => {
-  const  id = req.params.id;
-  try{
-    const data = await StockModel.findByIdAndUpdate(id,req.body,{runValidators:true ,new:true});
-    res.status(200).json({ success: true, data });
+router.delete("/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const result = await StockModel.findByIdAndDelete(id);
+    if (!result) return res.status(404).json({ error: "Product not found" });
+    res.json({ message: "Product deleted" });
   } catch (error) {
     res.status(500).json({ success: false, message: error.message });
   }
- });
-
- router.delete("/:id",async(req,res) =>{
-  const id = req.params.id;
-  try{
-      await StockModel.findByIdAndDelete(id);
-      res.status(200).json({sucsses:true})
-  } catch (error) {
-    res.status(500).json({ success: false, message: error.message });
-  }
- });
+});
 
 export default router;

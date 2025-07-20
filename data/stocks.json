@@ -1,284 +1,251 @@
 [
   {
-    "id": 1,
     "product_name": "House Slippers",
-    "category": "Footwear",
+    "category_code": "footwear",
     "price": 39.9,
     "stock": 100,
     "image_url": "/images/House Slippers.webp",
     "description": "Comfortable slippers designed for indoor use."
   },
-
   {
-    "id": 2,
     "product_name": "Basic T-Shirts",
-    "category": "Clothing",
+    "category_code": "clothing",
     "price": 49.9,
     "stock": 60,
     "image_url": "/images/T-shert.jpg",
     "description": "Comfortable and versatile basic t-shirts for everyday use."
   },
   {
-    "id": 3,
     "product_name": "Double Bedding Set",
-    "category": "Home",
+    "category_code": "home",
     "price": 199.9,
     "stock": 14,
     "image_url": "/images/Bedding.webp",
     "description": "Complete double bedding set including sheets and pillowcases."
   },
- 
   {
-    "id": 4,
     "product_name": "10-inch Tablet",
-    "category": "Electronics",
+    "category_code": "electronics",
     "price": 1299.0,
     "stock": 10,
     "image_url": "/images/tablet.jpg",
     "description": "Portable 10-inch tablet for work, study, and entertainment."
   },
- 
+
   {
-    "id": 5,
     "product_name": "Polo Shirt",
-    "category": "Clothing",
+    "category_code": "clothing",
     "price": 79.9,
     "stock": 37,
     "image_url": "/images/polo-shirt.jpg",
     "description": "Classic polo shirt with a comfortable fit for casual outings."
   },
   {
-    "id": 6,
     "product_name": "Women's Running Shoes",
-    "category": "Footwear",
+    "category_code": "footwear",
     "price": 299.9,
     "stock": 20,
     "image_url": "/images/clothing.jpg",
     "description": "Lightweight and supportive running shoes designed for women."
   },
   {
-    "id": 7,
     "product_name": "Men's Leather Shoes",
-    "category": "Footwear",
+    "category_code": "footwear",
     "price": 349.9,
     "stock": 15,
     "image_url": "https://example.com/images/shoes3.jpg",
     "description": "Elegant men's leather shoes suitable for formal occasions."
   },
- 
+
   {
-    "id": 8,
     "product_name": "Blue Button-Down Shirts",
-    "category": "Clothing",
+    "category_code": "clothing",
     "price": 89.9,
     "stock": 25,
     "image_url": "/images/blue-shirt.jpg",
     "description": "Classic blue button-down shirts, perfect for casual and formal wear."
   },
   {
-    "id": 9,
     "product_name": "Women's Boots",
-    "category": "Footwear",
+    "category_code": "footwear",
     "price": 399.9,
     "stock": 12,
     "image_url": "https://example.com/images/boots1.jpg",
     "description": "Stylish and durable boots for women."
   },
   {
-    "id": 10,
     "product_name": "Shower Slippers",
-    "category": "Footwear",
+    "category_code": "footwear",
     "price": 29.9,
     "stock": 70,
     "image_url": "https://example.com/images/slippers2.jpg",
     "description": "Non-slip slippers suitable for use in the shower or bathroom."
   },
   {
-    "id": 11,
     "product_name": "Smartphone Pro Max",
-    "category": "Electronics",
+    "category_code": "electronics",
     "price": 3199.0,
     "stock": 8,
     "image_url": "https://example.com/images/phone2.jpg",
     "description": "High-end smartphone with advanced features and large display."
   },
   {
-    "id": 12,
     "product_name": "Bluetooth Headphones",
-    "category": "Electronics",
+    "category_code": "electronics",
     "price": 199.0,
     "stock": 50,
     "image_url": "https://example.com/images/headphones1.jpg",
     "description": "Wireless Bluetooth headphones with high-quality sound."
   },
   {
-    "id": 13,
     "product_name": "Fast USB-C Charger",
-    "category": "Electronics",
+    "category_code": "electronics",
     "price": 79.0,
     "stock": 70,
     "image_url": "https://example.com/images/charger1.jpg",
     "description": "Quick charging USB-C adapter compatible with many devices."
   },
   {
-    "id": 14,
     "product_name": "Summer Dresses",
-    "category": "Clothing",
+    "category_code": "clothing",
     "price": 129.9,
     "stock": 40,
     "image_url": "/images/dress.jpg",
     "description": "Light and airy summer dresses, ideal for warm weather."
   },
- 
+
   {
-    "id": 15,
     "product_name": "Laptop Backpack",
-    "category": "Electronics",
+    "category_code": "electronics",
     "price": 129.9,
     "stock": 19,
     "image_url": "https://example.com/images/backpack1.jpg",
     "description": "Durable backpack designed to protect and carry your laptop."
   },
   {
-    "id": 16,
     "product_name": "Natural Shampoo 500ml",
-    "category": "Personal Care",
+    "category_code": "personal_care",
     "price": 29.9,
     "stock": 50,
     "image_url": "https://example.com/images/shampoo1.jpg",
     "description": "Gentle natural shampoo suitable for daily hair care."
   },
   {
-    "id": 17,
     "product_name": "Natural Face Soap",
-    "category": "Personal Care",
+    "category_code": "personal_care",
     "price": 24.9,
     "stock": 80,
     "image_url": "https://example.com/images/facewash1.jpg",
     "description": "Mild natural soap for cleansing the face."
   },
   {
-    "id": 18,
     "product_name": "Day Moisturizing Cream",
-    "category": "Personal Care",
+    "category_code": "personal_care",
     "price": 59.9,
     "stock": 45,
     "image_url": "https://example.com/images/cream1.jpg",
     "description": "Hydrating day cream to nourish and protect skin."
   },
   {
-    "id": 19,
     "product_name": "Anti-Aging Serum",
-    "category": "Personal Care",
+    "category_code": "personal_care",
     "price": 139.9,
     "stock": 30,
     "image_url": "https://example.com/images/serum1.jpg",
     "description": "Serum formulated to reduce signs of aging."
   },
   {
-    "id": 20,
     "product_name": "Electric Shaver",
-    "category": "Personal Care",
+    "category_code": "personal_care",
     "price": 229.0,
     "stock": 18,
     "image_url": "https://example.com/images/shaver1.jpg",
     "description": "Efficient electric shaver for smooth grooming."
   },
   {
-    "id": 21,
     "product_name": "Natural Toothpaste",
-    "category": "Personal Care",
+    "category_code": "personal_care",
     "price": 19.9,
     "stock": 60,
     "image_url": "https://example.com/images/toothpaste1.jpg",
     "description": "Toothpaste made with natural ingredients for oral care."
   },
   {
-    "id": 22,
     "product_name": "Lined Notebook",
-    "category": "Writing Instruments",
+    "category_code": "writing_instruments",
     "price": 6.9,
     "stock": 120,
     "image_url": "https://example.com/images/notebook2.jpg",
     "description": "Notebook with lined pages for writing and note-taking."
   },
   {
-    "id": 23,
     "product_name": "Gel Pens (Set of 10)",
-    "category": "Writing Instruments",
+    "category_code": "writing_instruments",
     "price": 19.9,
     "stock": 90,
     "image_url": "https://example.com/images/pens1.jpg",
     "description": "Set of 10 gel pens in assorted colors."
   },
   {
-    "id": 24,
     "product_name": "Color Marker Set",
-    "category": "Writing Instruments",
+    "category_code": "writing_instruments",
     "price": 29.9,
     "stock": 70,
     "image_url": "https://example.com/images/markers1.jpg",
     "description": "Bright colored markers ideal for drawing and highlighting."
   },
   {
-    "id": 25,
     "product_name": "Glue Stick",
-    "category": "Writing Instruments",
+    "category_code": "writing_instruments",
     "price": 4.9,
     "stock": 150,
     "image_url": "https://example.com/images/glue1.jpg",
     "description": "Portable glue stick for paper crafting and office use."
   },
   {
-    "id": 26,
     "product_name": "A4 Plastic Binder",
-    "category": "Writing Instruments",
+    "category_code": "writing_instruments",
     "price": 12.9,
     "stock": 85,
     "image_url": "https://example.com/images/binder1.jpg",
     "description": "A4 size plastic binder to organize your documents."
   },
   {
-    "id": 27,
     "product_name": "Desk Lamp",
-    "category": "Home",
+    "category_code": "home",
     "price": 99.9,
     "stock": 22,
     "image_url": "https://example.com/images/lamp2.jpg",
     "description": "Adjustable desk lamp to illuminate your workspace."
   },
   {
-    "id": 28,
     "product_name": "Men's Jeans",
-    "category": "Clothing",
+    "category_code": "clothing",
     "price": 149.9,
     "stock": 35,
     "image_url": "/images/jeans.jpg",
     "description": "Durable and stylish men's jeans suitable for various occasions."
   },
-  
+
   {
-    "id": 29,
     "product_name": "Glass Cups (Set of 6)",
-    "category": "Home",
+    "category_code": "home",
     "price": 49.9,
     "stock": 50,
     "image_url": "https://example.com/images/glasses1.jpg",
     "description": "Set of 6 clear glass cups, perfect for everyday use."
   },
   {
-    "id": 30,
     "product_name": "Shower Curtain",
-    "category": "Home",
+    "category_code": "home",
     "price": 59.9,
     "stock": 33,
     "image_url": "https://example.com/images/curtain1.jpg",
     "description": "Water-resistant shower curtain with a modern design."
   },
   {
-    "id": 31,
     "product_name": "Orthopedic Sleeping Pillow",
-    "category": "Home",
+    "category_code": "home",
     "price": 89.9,
     "stock": 26,
     "image_url": "https://example.com/images/pillow1.jpg",
