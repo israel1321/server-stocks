@@ -31,18 +31,20 @@ router.post("/login", async (req, res) => {
 
 router.post("/signup", async (req, res) => {
   try {
-    const { name, email, numberPhone, password } = req.body;
+    const { name, email, number_phone, password } = req.body;
     const passwordHash = await bcrypt.hash(password, 10);
     const user = new UserModel({
       name,
       email,
-      numberPhone,
+      number_phone,
       password: passwordHash,
     });
     await user.save();
     user.password = "********";
     res.json(user);
   } catch (error) {
+    console.error(error);
+
     if (error.code === 11000) {
       return res.status(409).json({ message: "User already exists" });
     }
