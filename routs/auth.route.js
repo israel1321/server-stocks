@@ -4,6 +4,7 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import Logger from "../utils/logger.js";
 import { validateToken } from "../middlewares/tokenValidation.js";
+import { JWT_SECRET } from "../envconfig.js";
 
 const router = Router();
 
@@ -19,13 +20,14 @@ router.post("/login", async (req, res) => {
     if (!isPasswordCorrect) {
       return res.status(401).json({ message: "Invalid email or password" });
     }
-    const token = jwt.sign({ id: user._id, role: user.role }, "secret", {
+    const token = jwt.sign({ id: user._id, role: user.role }, JWT_SECRET, {
       expiresIn: "1h",
     });
     user.password = "********";
     res.json({ user, token });
   } catch (error) {
     res.status(400).json(error);
+    console.log(error.message);
   }
 });
 

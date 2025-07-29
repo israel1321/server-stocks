@@ -1,4 +1,5 @@
 import jwt from "jsonwebtoken";
+import { JWT_SECRET } from "../envconfig.js";
 
 export function validateToken(req, res, next) {
   try {
@@ -7,8 +8,8 @@ export function validateToken(req, res, next) {
     const bearerToken = req.headers.authorization;
      
     const token = bearerToken.split(" ")[1];
-     const decoded = jwt.verify(token, "secret");
-    
+    const decoded = jwt.verify(token, JWT_SECRET);
+
     req.user = decoded;
     next();
   } catch (err) {
