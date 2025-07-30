@@ -10,7 +10,9 @@ const CategorySchema = new mongoose.Schema({
     required: true,
     unique: true,
   },
-  image: String,
+  image: {
+    type: String,
+  },
 });
 const CategoryModel = mongoose.model("categories", CategorySchema);
 export default CategoryModel;
