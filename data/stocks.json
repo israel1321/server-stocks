@@ -3,7 +3,7 @@
     "user_id": "6877b7c8080c0a466e0c09aa",
     "product_name": "House Slippers",
     "category_code": "footwear",
-    "price": 39.9,
+    "price": "39.9$",
     "stock": 100,
     "image_url": "/images/House Slippers.webp",
     "description": "Comfortable slippers designed for indoor use."
@@ -12,7 +12,7 @@
     "user_id": "6877b7c8080c0a466e0c09aa",
     "product_name": "Basic T-Shirts",
     "category_code": "clothing",
-    "price": 49.9,
+    "price": "49.9$",
     "stock": 60,
     "image_url": "/images/T-shert.jpg",
     "description": "Comfortable and versatile basic t-shirts for everyday use."
