@@ -83,13 +83,11 @@ router.put("/:id", async (req, res) => {
   try {
     const { id } = req.params;
     const update = req.body;
-    console.log("update", update);
 
     const data = await StockModel.findByIdAndUpdate(id, update, {
       new: true,
     });
     if (!data) return res.status(404).json({ error: "Product not found" });
-    console.log("data", data);
 
     res.json(data);
   } catch (error) {
