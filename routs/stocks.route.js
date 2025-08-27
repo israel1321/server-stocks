@@ -1,6 +1,6 @@
 import { Router } from "express";
 import StockModel from "../models/stock.model.js";
-
+import { validateToken } from "../middlewares/tokenValidation.js";
 const router = Router();
 
 router.get("/", async (req, res) => {
@@ -17,6 +17,23 @@ router.get("/", async (req, res) => {
     res.status(500).json({ success: false, message: error.message });
   }
 });
+
+// stocks/user
+router.get("/user", validateToken, async (req, res) => {
+  try {
+    const userId = req.user.id;
+    const data = await StockModel.find({ user_id: userId });
+
+    if (!data || data.length === 0) {
+      return res.status(404).json({ error: "Products not found" });
+    }
+
+    res.json(data);
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+});
+
 router.get("/:id", async (req, res) => {
   try {
     const data = await StockModel.findOne({ _id: req.params.id }).populate(
@@ -33,43 +50,47 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-router.post("/", async (req, res) => {
+router.post("/", validateToken, async (req, res) => {
   try {
     const {
       product_name,
-      category,
-      categoryCode,
-      price,
-      stock,
-      image_url,
-      description,
-    } = req.body;
-    const item = new StockModel({
-      product_name,
-      category,
-      categoryCode,
+      category_code,
       price,
       stock,
       image_url,
       description,
       location,
-      user_id: req.user._id,
+    } = req.body;
+    const item = new StockModel({
+      product_name,
+      category_code,
+      price,
+      stock,
+      image_url,
+      description,
+      location,
+      user_id: req.user.id,
     });
     await item.save();
     res.status(201).json(item);
   } catch (error) {
+    console.error(error);
     res.status(500).json({ success: false, message: error.message });
   }
 });
 
-router.patch("/:id", async (req, res) => {
+router.put("/:id", async (req, res) => {
   try {
     const { id } = req.params;
     const update = req.body;
+    console.log("update", update);
+
     const data = await StockModel.findByIdAndUpdate(id, update, {
       new: true,
     });
     if (!data) return res.status(404).json({ error: "Product not found" });
+    console.log("data", data);
+
     res.json(data);
   } catch (error) {
     res.status(500).json({ success: false, message: error.message });

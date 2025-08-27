@@ -3,10 +3,8 @@ import { JWT_SECRET } from "../envconfig.js";
 
 export function validateToken(req, res, next) {
   try {
-     
-    
     const bearerToken = req.headers.authorization;
-     
+
     const token = bearerToken.split(" ")[1];
     const decoded = jwt.verify(token, JWT_SECRET);
 
