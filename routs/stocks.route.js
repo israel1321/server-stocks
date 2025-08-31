@@ -1,6 +1,13 @@
 import { Router } from "express";
 import StockModel from "../models/stock.model.js";
 import { validateToken } from "../middlewares/tokenValidation.js";
+import {
+  CreateStockSchema,
+  UpdateStockSchema,
+  DeleteStockSchema,
+  StockIdSchema,
+} from "../zod/stocks.model.js";
+
 const router = Router();
 
 router.get("/", async (req, res) => {
@@ -18,7 +25,6 @@ router.get("/", async (req, res) => {
   }
 });
 
-// stocks/user
 router.get("/user", validateToken, async (req, res) => {
   try {
     const userId = req.user.id;
@@ -35,6 +41,17 @@ router.get("/user", validateToken, async (req, res) => {
 });
 
 router.get("/:id", async (req, res) => {
+  const paramsValidation = StockIdSchema.safeParse(req.params);
+  if (!paramsValidation.success) {
+    return res.status(400).json({
+      success: false,
+      message: "Invalid stock id",
+      errors: bodyValidation.error.issues.map((issues) => ({
+        field: issues.path[0],
+        message: issues.message,
+      })),
+    });
+  }
   try {
     const data = await StockModel.findOne({ _id: req.params.id }).populate(
       "user_id"
@@ -51,26 +68,22 @@ router.get("/:id", async (req, res) => {
 });
 
 router.post("/", validateToken, async (req, res) => {
-  try {
-    const {
-      product_name,
-      category_code,
-      price,
-      stock,
-      image_url,
-      description,
-      location,
-    } = req.body;
-    const item = new StockModel({
-      product_name,
-      category_code,
-      price,
-      stock,
-      image_url,
-      description,
-      location,
-      user_id: req.user.id,
+  const validateData = CreateStockSchema.safeParse({
+    ...req.body,
+    user_id: req.user.id,
+  });
+  if (!validateData.success) {
+    return res.status(400).json({
+      success: false,
+      message: "Invalid data",
+      errors: validateData.error.issues.map((issues) => ({
+        field: issues.path[0],
+        message: issues.message,
+      })),
     });
+  }
+  try {
+    const item = new StockModel(validateData.data);
     await item.save();
     res.status(201).json(item);
   } catch (error) {
@@ -80,12 +93,35 @@ router.post("/", validateToken, async (req, res) => {
 });
 
 router.put("/:id", async (req, res) => {
+  const paramsValidation = StockIdSchema.safeParse(req.params);
+  if (!paramsValidation.success) {
+    return res.status(400).json({
+      success: false,
+      message: "Invalid stock id",
+      errors: paramsValidation.error.issues.map((issues) => ({
+        field: issues.path[0],
+        message: issues.message,
+      })),
+    });
+  }
+  const validateData = UpdateStockSchema.safeParse(req.body);
+  if (!validateData.success) {
+    return res.status(400).json({
+      success: false,
+      message: "Invalid data",
+      errors: validateData.error.issues.map((issues) => ({
+        field: issues.path[0],
+        message: issues.message,
+      })),
+    });
+  }
   try {
     const { id } = req.params;
-    const update = req.body;
+    const update = validateData.data;
 
     const data = await StockModel.findByIdAndUpdate(id, update, {
       new: true,
+      runValidators: true,
     });
     if (!data) return res.status(404).json({ error: "Product not found" });
 
@@ -96,6 +132,17 @@ router.put("/:id", async (req, res) => {
 });
 
 router.delete("/:id", async (req, res) => {
+  const paramsValidation = DeleteStockSchema.safeParse({ id: req.params.id });
+  if (!paramsValidation.success) {
+    return res.status(400).json({
+      success: false,
+      message: "Invalid stock id",
+      errors: paramsValidation.error.issues.map((issues) => ({
+        field: issues.path[0],
+        message: issues.message,
+      })),
+    });
+  }
   try {
     const { id } = req.params;
     const result = await StockModel.findByIdAndDelete(id);
